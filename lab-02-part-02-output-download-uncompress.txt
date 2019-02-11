@@ -19,7 +19,7 @@ $ echo hello
 Copy and paste the output below.
 ----------
 
-
+hello
 
 ==========
 2. Type:
@@ -28,7 +28,7 @@ $ echo hello there
 
 Copy and paste the output below.
 ----------
-
+hello there
 
 
 ==========
@@ -39,7 +39,7 @@ $ echo good mornin'
 Copy and paste the output below.
 ----------
 
-
+> 
 
 ==========
 4. Uh-oh... we're stuck!
@@ -57,7 +57,7 @@ $ echo "good mornin'"
 Copy and paste the output below.
 ----------
 
-
+good mornin'
 
 ==========
 6. There are some other symbols that have special meanings if you don't quote them.  For example, > brings up a different prompt.  Try *.
@@ -67,7 +67,7 @@ $ echo *
 What happens?
 ----------
 
-
+shows what directory im currently in.
 
 ==========
 7. Ok... that's a lot of output.  How do we clean up our screen so that it's empty again?
@@ -75,7 +75,7 @@ What happens?
 Write the command that you used below:
 ----------
 
-
+clear
 
 ==========
 We're going to practice downloading files from a web site.  We'll use this practice to download more lab materials!
@@ -87,7 +87,12 @@ $ curl google.com
 
 Copy and paste the output below.
 ----------
-
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
 
 
 ==========
@@ -97,31 +102,33 @@ $ curl www.google.com
 
 Copy and paste the output below, but not the whole thing!  Just copy up to the part that has the title tags (<title>......</title>).
 ----------
-
-
-
+<TITLE>301 Moved</TITLE>
+<title>Google</title>
+<TITLE>301 Moved</TITLE>
 ==========
 10. That's great, but what if I want to save the file?  What flag/option and option argument would I use to download the page to a file called google.html?  Run it to download the URL www.google.com.
 
 Write the command you used below.  Also copy and paste the output below.
 ----------
+curl -o google.txt www.google.com
 
-
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 11280    0 11280    0     0   124k      0 --:--:-- --:--:-- --:--:--  125k
 
 ==========
 11. Now let's download the lab file for this homework.  First, figure out what directory you're in.
 
 Write the command you used to determine your directory.  Also, copy and paste the output below.
 ----------
-
-
-
+pwd
+/Users/dexter.manswell85/Desktop/my-stuff
 ==========
 12. If you're not in your home directory, change to it (use the shortcut).
 
 Write the command that you used to change to your home directory.  If you were already in your home directory, write the command that you *would* have used to change to it!
 ----------
-
+cd ~
 
 
 ==========
@@ -137,6 +144,10 @@ Use ls to verify that it downloaded.
 
 Write down the command that you used to download the file below.  Additionally, write the output of the command below.
 ----------
+V217-M13:~ dexter.manswell85$ curl -o lab2.zip http://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/02/mtec1002-lab-02.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  935k  100  935k    0     0  1327k      0 --:--:-- --:--:-- --:--:-- 1328k
 
 
 
@@ -146,14 +157,14 @@ Write down the command that you used to download the file below.  Additionally, 
 Write down the command that you used to uncompress the file.
 ----------
 
-
+unzip lab2.zip
 
 ==========
 15. Change to the directory that was just created.  List the contents (of the directory that was extracted from the labs .zip file). 
 
 Copy and paste the output below.
 ----------
-
+books	logs	web
 
 
 ==========
@@ -165,7 +176,9 @@ We're going to mess around with archiving and compressing files.  We'll make a d
 Copy and paste the output below.
 ----------
 
-
+Applications	Downloads	Music		__MACOSX	mtec1002-lab-02
+Desktop		Library		Pictures	isus
+Documents	Movies		Public		lab2.zip
 
 ==========
 17. Change into the "stuff" directory that you just created.  Run the following command (we haven't learned this exact command yet, but we will in the next lab!) exactly as described below:
@@ -177,7 +190,7 @@ List the files in the directory you're currently in (which should be stuff).
 Copy and paste the output below.
 ----------
 
-
+food		google.txt	hello.txt
 
 ==========
 18. Go up one directory back into your home directory.  Run the following commands exactly to create a compressed archive of the stuff folder.
@@ -188,6 +201,13 @@ List the files in the directory you're currently in (which should be home).
 
 Copy and paste the output below.
 ----------
+V217-M13:Desktop dexter.manswell85$ tar -cvf stuff.tar my-stuff/
+a my-stuff
+a my-stuff/google.txt
+a my-stuff/food
+a my-stuff/hello.txt
+V217-M13:Desktop dexter.manswell85$ ls
+my-stuff	stuff.tar
 
 
 
@@ -198,7 +218,13 @@ $ tar -cvf stuff.tar stuff
 
 Copy and paste the output below.
 ----------
-
+V217-M13:Desktop dexter.manswell85$ tar -cvf stuff.tar my-stuff/
+a my-stuff
+a my-stuff/google.txt
+a my-stuff/food
+a my-stuff/hello.txt
+V217-M13:Desktop dexter.manswell85$ ls
+my-stuff	stuff.tar
 
 
 ==========
@@ -207,7 +233,7 @@ Copy and paste the output below.
 Copy and paste the output below. (It should contain stuff.tar)
 ----------
 
-
+my-stuff	stuff.tar
 
 ==========
 21. Now compress it!  Type:
@@ -217,7 +243,7 @@ gzip stuff.tar
 List your files again.... you should have a new file with a .gz extension.  Copy and paste the output of your this below.
 ----------
 
-
+my-stuff	stuff.tar.gz
 
 ==========
 22. Move stuff.tar.gz into the lab directory that we downloaded.  We didn't learn this command yet, so just type in exactly as is:
@@ -231,7 +257,7 @@ Change your directory to mtec1002-lab-02.
 List the files.  Copy and paste the output below (stuff.tar.gz should be there).
 ----------
 
-
+books		logs		stuff.tar.gz	web
 ==========
 23. You should be in the lab directory.  Let's uncompress the file.
 
@@ -240,7 +266,7 @@ $ tar -xvf stuff.tar.gz
 List the files.  Copy and paste the output below (the folder, stuff, should be there).
 ----------
 
-
+books		logs		my-stuff	stuff.tar.gz	web
 
 
 
