@@ -90,7 +90,7 @@ cd -
 14. How would you show all of the files (including hidden ones) with detailed (long) information that are on you're Desktop if you're in your home directory?  Write your command below.
 ----------
 
-
+cd -la
 
 ==========
 15. 
@@ -102,3 +102,32 @@ e. Determine which folder in my-stuff was created most recently by using ls.  (t
 f. Remove that folder.
 g. Show all of the commands that you used to complete the above exercise.  (for example, how did you determine which folder in my-stuff was the most recent?).  Use the command: history ... to help you remember what you did!  Paste the commands below.
 ----------
+
+   19  ce ~/Desktop
+   20  cd ~/Desktop
+   21  ls
+   22  mkdir my-stuff
+   23  cd /my-stuff mkdir -p /food/drinks
+   24  ls
+   25  cd /my-stuff
+   26  cd mystuff
+   27  cd my-stuff
+   28  ls
+   29  mkdir -p /food/drinks
+   30  mkdir -p food/drinks
+   31  ls
+   32  ls
+   33  ls la
+   34  ls -l
+   35  cd food
+   36  ls
+   37  rmdir drinks
+   38  cd -
+   39  mkdir drinks
+   40  ls
+   41  ls la
+   42  ls -la
+   43  rmdir drinks
+   44  history
+
+
